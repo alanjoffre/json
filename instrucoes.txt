@@ -149,14 +149,16 @@ EXEMPLO:
 }
 
 No campo: JSONPath Syntax
-$                        - Retorna todo o conteudo do json (Raiz)
-$.age                    - Retorna o campo idade (resultado = 26)
-$.address                - Retorna o campo endereço
-$.address.postalCode     - Retorna o campo postalCode
-$.phoneNumbers[0]        - Primeiro item da lista
-$.phoneNumbers[0].number -  
-
-
+$                                         - Retorna todo o conteudo do json (Raiz)
+$.age                                     - Retorna o campo idade (resultado = 26)
+$.address                                 - Retorna o campo endereço
+$.address.postalCode                      - Retorna o campo postalCode
+$.phoneNumbers[0]                         - Primeiro item da lista
+$.phoneNumbers[0].number                  - Primeiro item da lista / Numero de telefone
+$.phoneNumbers[?(@.number=="9999999999")] - Retona o 'type' do numero = "9999999999" (filtro)
+$.phoneNumbers[?(@.type=="home")]         - Retona o 'numero' do 'type' = "home" (filtro)
+$.phoneNumbers[?(@.type!="home")]         - Retorna tudo que é diferente de "home" (filtro)
+$.phoneNumbers[?(@.type!="home")].number  - Retorna apenas os campos "numeros" (filtro)
 
 
 
